@@ -1,0 +1,54 @@
+.button {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-text);
+  color: var(--clr-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  background-color: var(--button-bg-default, var(--clr-primary));
+
+  transition: background-color var(--transition-duration),
+    color var(--transition-duration), box-shadow var(--transition-duration);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--button-bg-hover, var(--clr-quatenary));
+    color: var(--button-color-hover, var(--clr-primary));
+    box-shadow: 2px 2px 6px 2px rgba(from var(--clr-black) r g b / 0.2);
+  }
+
+  path {
+    fill: currentColor;
+    transition: fill var(--transition-duration);
+  }
+}
+
+.button--secondary {
+  --button-bg-default: var(--clr-secondary);
+  --button-color-hover: var(--clr-secondary);
+}
+
+.button--danger {
+  --button-bg-default: var(--clr-danger);
+  --button-bg-hover: var(--clr-danger);
+  --button-color-hover: var(--clr-white);
+}
+
+.button--rect {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.button--circle {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
